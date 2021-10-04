@@ -5,4 +5,6 @@ This is a repository for the course STA Statistical Analysis of High-Throughput 
 
 ![An image](https://www.genome.gov/sites/default/files/media/images/2021-02/HGP_dynamic.jpg)
 
+## New Branching Feature
 
+This is a testing for git branching testing.
