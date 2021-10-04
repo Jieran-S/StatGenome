@@ -1,0 +1,72 @@
+---
+title: "Exercise_1B"
+author: "Jieran Sun"
+date: "10/4/2021"
+output: html_document
+---
+\
+
+## Exercise 1B: R Markdown Testing
+
+\
+
+This is the exercise for STA 1B. In this HTML document, we will configure a sample containing 100 random values from a log-normal distribution with mu=1 and sigma=0.25. This can be achieved via
+
+```{r}
+Exer1B_Sample <- rlnorm(100, meanlog=1, sdlog=0.25)
+```
+\
+
+### Visualization of sample data
+
+\
+We assigned the variable as Exer1B_Sample, and now we can plot the histogram of the sample in both linear and log scale.
+
+```{r, echo=F, fig.cap="Histogram of sample data in linear scale."}
+# plot
+hist(Exer1B_Sample)
+```
+
+```{r, echo=F, fig.cap="Histogram of sample data in log scale."}
+# plot
+hist(log(Exer1B_Sample))
+```
+\
+
+### Mean and Variance Calculation
+
+\
+
+Let's find out the mean and the variance.
+
+```{r}
+Exer1B_Sample.mean <- mean(Exer1B_Sample) 
+Exer1B_Sample.mean
+```
+
+```{r}
+Exer1B_Sample.var <- var(Exer1B_Sample) 
+Exer1B_Sample.var
+```
+
+And for samples in log scale, we have
+
+```{r}
+Exer1B_Sample.logmean <- mean(log(Exer1B_Sample)) 
+Exer1B_Sample.logmean
+```
+
+```{r}
+Exer1B_Sample.logvar <- var(log(Exer1B_Sample)) 
+Exer1B_Sample.logvar
+```
+\
+
+### Conclusion
+
+\
+
+
+```{r, echo=F}
+print(paste0("Hence, we can draw the conclusion that the mean and variance of the sample in linear scale are ", round(Exer1B_Sample.mean, 2), " and ", round(Exer1B_Sample.var, 2), ". Similarly, in log scale, the mean and variance of the sample are estimated as ", round(Exer1B_Sample.logmean, 2), " and ", round(Exer1B_Sample.logvar, 2)))
+```
